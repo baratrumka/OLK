@@ -1,0 +1,12 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+driver_path = "путь_к_вашему_драйверу/chromedriver"
+driver = webdriver.Chrome(executable_path=driver_path)
+driver.get("https://www.example.com")
+time.sleep(3)
+search_box = driver.find_element("name", "q")
+search_box.send_keys("Пример поискового запроса" + Keys.RETURN)
+time.sleep(3)
+driver.quit()
